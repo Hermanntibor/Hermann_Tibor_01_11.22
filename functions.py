@@ -30,6 +30,20 @@ def versenyzok():
         print(f'\t{nevek[i]}')
     input('...')
 
+def ujversenyzo():
+    system('cls')
+    print('Új autó')
+    nevek.append(input('versenyző neve: '))
+    ido.append(input('idő: '))
+    eredmenymentes(nevek[len(nevek)-1],ido[len(ido)-1])
+    input('versenyző felvétele. Tovább (Enter)...')
+
+def eredmenymentes(nev,ido):
+    file=open(fajlnev,'a',encoding='utf-8')
+    file.write(f'\n{nev};{ido}')
+    file.close()
+
+
 
 
 
