@@ -10,4 +10,5 @@ while valasztas !='0':
         versenyzok()
     elif valasztas=='2':
         ujversenyzo()
-    
+    elif valasztas=='3':
+        versenyzotorlese()

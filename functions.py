@@ -31,6 +31,14 @@ def versenyzok():
     input('...')
 
 def ujversenyzo():
+    file=open(fajlnev,'r',encoding='utf-8')
+    for row in file:
+        darabolt=row.strip().split(';')
+        print(darabolt)
+        nevek.append(darabolt[0])
+        ido.append(float(darabolt[1]))
+    file.close()
+
     system('cls')
     print('Új autó')
     nevek.append(input('versenyző neve: '))
@@ -42,6 +50,35 @@ def eredmenymentes(nev,ido):
     file=open(fajlnev,'a',encoding='utf-8')
     file.write(f'\n{nev};{ido}')
     file.close()
+
+def versenyzotorlese():
+   
+    file=open(fajlnev,'r',encoding='utf-8')
+    for row in file:
+        darabolt=row.strip().split(';')
+        print(darabolt)
+        nevek.append(darabolt[0])
+        ido.append(darabolt[1])
+    file.close()
+
+    system('cls')
+    print('----------eredmény-törlése----------')
+    versenyzok
+    sSz=int(input('\nKit töröljünk?: '))
+    nevek.pop(sSz-1)
+    ido.pop(sSz-1)
+    input('sikeres törlés.')
+    mentesfajlba()
+
+def mentesfajlba():
+    file=open(fajlnev,'w',encoding='utf-8')
+    for i in range(len(nevek)):
+        if i>0:
+            file.write('\n')
+        file.write(f'{nevek[i]};{ido[i]}')
+    file.close()
+
+
 
 
 
