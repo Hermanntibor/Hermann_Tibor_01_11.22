@@ -16,6 +16,8 @@ def menu():
     return input('Választás: ')
 
 def versenyzok():
+    nevek.clear()
+    ido.clear()
     file=open(fajlnev,'r',encoding='utf-8')
     for row in file:
         darabolt=row.strip().split(';')
@@ -52,7 +54,6 @@ def eredmenymentes(nev,ido):
     file.close()
 
 def versenyzotorlese():
-   
     file=open(fajlnev,'r',encoding='utf-8')
     for row in file:
         darabolt=row.strip().split(';')
@@ -79,6 +80,17 @@ def mentesfajlba():
     file.close()
 
 
+def leggyorsabb():
+    minpoz=0
+    for i in range(len(ido)):
+        if ido[i]<ido[minpoz]:
+            minpoz=i
+    print(minpoz)
+    print("A leggyorsabb versenyző(k):")
+    for i in range(len(ido)):
+        if int(ido[i])==minpoz:
+            print(f"{nevek[i]} {ido[i]}")
+    input('...')
 
 
 

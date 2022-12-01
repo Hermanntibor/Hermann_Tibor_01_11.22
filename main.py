@@ -12,3 +12,9 @@ while valasztas !='0':
         ujversenyzo()
     elif valasztas=='3':
         versenyzotorlese()
+    elif valasztas=='4':
+        leggyorsabb()
+    elif valasztas=='5':
+        pass
+    elif valasztas=='6':
+        pass
