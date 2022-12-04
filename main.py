@@ -17,4 +17,4 @@ while valasztas !='0':
     elif valasztas=='5':
         leglassabb()
     elif valasztas=='6':
-        pass
+        leghosszabnev()

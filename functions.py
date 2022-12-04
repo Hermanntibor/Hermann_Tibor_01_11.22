@@ -113,21 +113,47 @@ def leglassabb():
         ido.append(float(darabolt[1]))
     file.close()
     
-    maxpoz=0
-    maxertek="0"
+    max=ido[0]
+    maxIndex=0
     for i in range(len(ido)):
-        if ido[i]>ido[maxpoz]:
-            maxpoz=i
-            maxertek=ido[maxpoz]
-    print(maxertek)
+        if ido[i]>max:
+            max=ido[i]
+            maxIndex=i
     print("A leglassabb versenyző(k):")
     for i in range(len(ido)):
-        if int(ido[i])==maxertek:
+        if int(ido[i])==ido[maxIndex]:
             print(f"{nevek[i]} {ido[i]}")
     input('...')
 
+def leghosszabnev():
 
+    nevek.clear()
+    ido.clear()
+    file=open(fajlnev,'r',encoding='utf-8')
+    for row in file:
+        darabolt=row.strip().split(';')
+        nevek.append(darabolt[0])
+        ido.append(float(darabolt[1]))
+    file.close()
 
+    hosszusagok=[]
+    for item in nevek:
+        hosszusag=0
+        for i in range(len(item)):
+            hosszusag+=1
+        hosszusagok.append(hosszusag)
+
+    max=hosszusagok[0]
+    maxIndex=0
+    for i in range(len(hosszusagok)):
+        if hosszusagok[i]>max:
+            max=hosszusagok[i]
+            maxIndex=i
+    print("A leghosszabb nevű versenyző(k):")
+    for i in range(len(hosszusagok)):
+        if int(hosszusagok[i])==hosszusagok[maxIndex]:
+            print(f"{nevek[i]} {hosszusagok[i]}")
+    input('...')
 
 
 
